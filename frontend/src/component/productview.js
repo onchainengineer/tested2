@@ -4,10 +4,11 @@ import Card from 'react-bootstrap/Card';
 function ProductsPage() {
   return (
   <>
-  <div class="container text-center">
+  <div class="container text-center ">
   <div class="row">
-  <div class="col-sm-3">
-  <Card style={{ width: '15rem' }}>
+  <div style={{ width: '4rem' }}/>
+  <div class="col-sm-3 shadow p-3 mb-5 bg-white rounded">
+  <Card style={{ width: '16rem' }}>
     <Card.Img variant="top" src="holder.js/100px180" />
     <Card.Body>
       <Card.Title>Product1</Card.Title>
@@ -18,8 +19,9 @@ function ProductsPage() {
     </Card.Body>
   </Card>
   </div>
-  <div class="col-sm-3">
-  <Card style={{ width: '15rem' }}>
+  <div style={{ width: '4rem' }}/>
+  <div class="col-sm-3 shadow p-3 mb-5 bg-white rounded">
+  <Card style={{ width: '16rem' }}>
     <Card.Img variant="top" src="holder.js/100px180" />
     <Card.Body>
       <Card.Title>Product1</Card.Title>
@@ -30,8 +32,9 @@ function ProductsPage() {
     </Card.Body>
   </Card>
 </div>
-<div class="col-sm-3">
-<Card style={{ width: '15rem' }}>
+<div style={{ width: '4rem' }}/>
+<div class="col-sm-3 shadow p-3 mb-5 bg-white rounded">
+<Card style={{ width: '16rem' }}>
     <Card.Img variant="top" src="holder.js/100px180" />
     <Card.Body>
       <Card.Title>Product1</Card.Title>
@@ -42,8 +45,10 @@ function ProductsPage() {
     </Card.Body>
   </Card>
 </div>
-<div class="col-sm-3">
-<Card style={{ width: '15rem' }}>
+<div style={{ width: '4rem' }}/>
+<div style={{ width: '4rem' }}/>
+<div class="col-sm-3 shadow p-3 mb-5 bg-white rounded">
+<Card style={{ width: '16rem' }}>
     <Card.Img variant="top" src="holder.js/100px180" />
     <Card.Body>
       <Card.Title>Product1</Card.Title>
@@ -54,8 +59,9 @@ function ProductsPage() {
     </Card.Body>
   </Card>
 </div>
-<div class="col-sm-3">
-<Card style={{ width: '15rem' }}>
+<div style={{ width: '4rem' }}/>
+<div class="col-sm-3 shadow p-3 mb-5 bg-white rounded">
+<Card style={{ width: '16rem' }}>
     <Card.Img variant="top" src="holder.js/100px180" />
     <Card.Body>
       <Card.Title>Product1</Card.Title>
@@ -66,20 +72,9 @@ function ProductsPage() {
     </Card.Body>
   </Card>
 </div>
-<div class="col-sm-3">
-<Card style={{ width: '15rem' }}>
-    <Card.Img variant="top" src="holder.js/100px180" />
-    <Card.Body>
-      <Card.Title>Product1</Card.Title>
-      <Card.Text>
-        Content
-      </Card.Text>
-      <Button variant="primary">View Product</Button>
-    </Card.Body>
-  </Card>
-</div>
-<div class="col-sm-3">
-<Card style={{ width: '15rem' }}>
+<div style={{ width: '4rem' }}/>
+<div class="col-sm-3 shadow p-3 mb-5 bg-white rounded">
+<Card style={{ width: '16rem' }}>
     <Card.Img variant="top" src="holder.js/100px180" />
     <Card.Body>
       <Card.Title>Product</Card.Title>
