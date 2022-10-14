@@ -19,7 +19,7 @@ function ProductDetail() {
 
   useEffect(()=>{
     getProduct();
-  },[])
+  },[localStorage.getItem("user")])
   return (
   <>
   <div class="container text-center shadow p-3 mb-5 bg-white rounded">
