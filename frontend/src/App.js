@@ -17,9 +17,9 @@ function App() {
       <Routes>
         <Route path="/main" element={<Main />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/productadd" element={<ProductAdd />} />
-        <Route path="/productview" element={<ProductView />} />
-        <Route path="/productpage" element={<ProductPage />} />
+        <Route path="/product/add" element={<ProductAdd />} />
+        <Route path="/products" element={<ProductView />} />
+        <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/" element={<Navigate replace to="/main" />} />
       </Routes>
     </BrowserRouter>
