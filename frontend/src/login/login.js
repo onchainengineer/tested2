@@ -1,6 +1,8 @@
 
 import React, { useState } from "react"
 import axios from "axios";
+import Auth from '../auth/auth'
+import {withRouter} from "react-router";
 
 const API_URL = "http://localhost:3000";
 
@@ -17,10 +19,7 @@ export default function (props) {
   }
 
   const registerUser = async()=>{
-    console.log(name);
-    console.log(email);
-    console.log(password);
-  //  axios.post(`${process.env.REACT_APP_API_URL}/users/register`,
+
   axios.post(API_URL+'/users/register',
    {name,email,password,isSeller})
   .then(()=>{
@@ -29,19 +28,13 @@ export default function (props) {
   .catch(err=>{console.log(err)})
  }
 
-  const loginUser = ()=>{
-    // const email = emailRef.current.value;
-    // const password = passwordRef.current.value;
-
-    // axios.post(`${process.env.REACT_APP_API_URL}/users/login`,{
-    //     email,password
-    // })
-    axios.post(API_URL+"/users/login",{
-      email,password
-  })
-    .then((resp)=>{
-        console.log(resp.data);
-        localStorage.setItem('user',resp.data.token);
+  const loginUser = async(e)=>{
+    e.preventDefault();
+    axios.post(API_URL+'/users/login',
+    {email,password})
+    .then(res=>{
+        console.log(res.data);
+        localStorage.setItem('user',res.data.token);
         console.log(props.history);
         
         props.history.push("/");
@@ -76,9 +69,6 @@ export default function (props) {
             <div className="d-grid gap-2 mt-3">
               <button type="submit" className="btn btn-primary" onClick={loginUser}>Login</button>
             </div>
-            <p className="text-center mt-2">
-              Forgot <a href="#">password?</a>
-            </p>
           </div>
         </form>
       </div>
@@ -123,9 +113,9 @@ export default function (props) {
           <div className="d-grid gap-2 mt-3">
           <button type="submit" className="btn btn-primary" onClick={registerUser}>Sign Up</button>
           </div>
-          <p className="text-center mt-2">
+          {/* <p className="text-center mt-2">
             Forgot <a href="#">password?</a>
-          </p>
+          </p> */}
         </div>
       </form>
     </div>

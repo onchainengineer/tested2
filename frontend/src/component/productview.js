@@ -19,7 +19,7 @@ function ProductsPage() {
 
   useEffect(()=>{
     getProducts();
-  },[])
+  },[localStorage.getItem("user")])
 
   return (
   <>
@@ -38,7 +38,7 @@ function ProductsPage() {
             Warranty Period : {product.warranty}<br/>
             Details : {product.details}
           </Card.Text>
-          <Link to={`/product/${product._id}`} ><Button variant="primary" >View Product</Button></Link>``
+          <Link to={`/product/${product._id}`} ><Button variant="primary" >View Product</Button></Link>
         </Card.Body>
       </Card>
       </div>
