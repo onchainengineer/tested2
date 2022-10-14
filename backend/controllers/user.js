@@ -6,6 +6,7 @@ const auth = require('../auth/auth');
 
 
 exports.login = async(req,res,next)=>{
+    // console.log(req.body);
     passport.authenticate('login',async(err,user,info)=>{
         try{
             if(err){
@@ -23,6 +24,7 @@ exports.login = async(req,res,next)=>{
                 }
                 const body = {_id:user._id.toString(),email:user.email.toString()};
                 const token = jwt.sign({user:body},process.env.AUTH_SECRET);
+                // console.log(token)
                 return res.json({token});
             })
         }

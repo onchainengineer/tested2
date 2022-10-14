@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavbarDesign() {
   return (
@@ -11,9 +10,9 @@ function NavbarDesign() {
         <span class="navbar-brand mb-0 h1">Athena</span>
         </Navbar.Brand>
           <Nav className="justify-content-end">
-            <Nav.Link href="#login">Login</Nav.Link>
-            <Nav.Link href="#productview">View Products</Nav.Link>
-            <Nav.Link href="#addproduct">Add Product</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/products">View Products</Nav.Link>
+            <Nav.Link href="/product/add">Add Product</Nav.Link>
           </Nav>
       </Container>
     </Navbar>
