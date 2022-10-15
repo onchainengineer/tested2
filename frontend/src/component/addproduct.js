@@ -1,7 +1,7 @@
 import axios from "axios";
 import React,{useState} from "react"
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://athena-backend.vercel.app";
 
 function AddProduct() {
   const [name,setName] = useState();

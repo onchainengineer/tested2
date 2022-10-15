@@ -11,7 +11,7 @@ import Navbar from "./navbar/navbar.js"
 import Main from "./mainpage/main.js"
 import axios from 'axios';
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://athena-backend.vercel.app";
 
 function App() {
 

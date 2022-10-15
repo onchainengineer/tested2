@@ -4,7 +4,7 @@ import React,{useState,useEffect} from "react"
 import axios from 'axios';
 import {Link, useParams} from 'react-router-dom';
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://athena-backend.vercel.app";
  
 function ProductDetail() {
   const {id} = useParams();
@@ -34,8 +34,10 @@ function ProductDetail() {
         Warranty : {product.warranty}<br/>
         Details : {product.details}
       </Card.Text>
-      <a href="#productview">
-      <Link to="/products"><Button variant="primary">View other products</Button></Link>
+      <a target="_blank" href="https://athena-marketplace.vercel.app/">
+      {/* <Link to="/products"> */}
+        <Button variant="primary">Buy Product</Button>
+        {/* </Link> */}
       </a>
     </Card.Body>
   </Card>)}

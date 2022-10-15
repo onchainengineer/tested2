@@ -4,7 +4,7 @@ import axios from "axios";
 import Auth from '../auth/auth'
 import {useNavigate, withRouter} from "react-router";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://athena-backend.vercel.app";
 
 export default function (props) {
   let [authMode, setAuthMode] = useState("signin");
@@ -52,12 +52,7 @@ const getUser = ()=>{
 }})
 .then((res)=>{
   console.log(res.data.isSeller)
-  // if(res.data.isSeller===true){
-  //   localStorage.setItem('isSeller',true)
-  // }
-  // if(res.data.isManufacturer===true){
-  //   localStorage.setItem('isManufacturer',true)
-  // }
+
   localStorage.setItem('isSeller',res.data.isSeller)
   localStorage.setItem('isManufacturer',res.data.isManufacturer)
   navigate("/");
@@ -135,9 +130,7 @@ const getUser = ()=>{
           <div className="d-grid gap-2 mt-3">
           <button type="submit" className="btn btn-primary" onClick={registerUser}>Sign Up</button>
           </div>
-          {/* <p className="text-center mt-2">
-            Forgot <a href="#">password?</a>
-          </p> */}
+  
         </div>
       </form>
     </div>

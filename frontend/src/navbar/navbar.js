@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Auth from '../auth/auth';
 import axios from 'axios';
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://athena-backend.vercel.app";
 
 function NavbarDesign() {
   const [isUser,setIsUser] = useState(false);
@@ -30,13 +30,7 @@ function NavbarDesign() {
       }
     }
     
-    
-    // if(localStorage.getItem('isSeller')){
-    //   setIsSeller(true);
-    // }
-    // if(localStorage.getItem('isManufacturer')){
-    //   setIsManufacturer(true)
-    // }
+
   }
 
   useEffect(()=>{
@@ -55,7 +49,8 @@ function NavbarDesign() {
             {isUser && <Nav.Link onClick={logoutUser}>Logout</Nav.Link>}
             <Nav.Link href="/products">View Products</Nav.Link>
             {isSeller && (<Nav.Link href="/product/add">Add Product</Nav.Link>)}
-            {isManufacturer && (<Nav.Link href="/">Wallet</Nav.Link>)}
+            {isManufacturer && (<Nav.Link target="_blank" href="https://athena-minter.vercel.app">Create Product</Nav.Link>)}
+            {isUser && <Nav.Link target="_blank" href="https://athena-gallery-seven.vercel.app/">Profile</Nav.Link>}
           </Nav>
       </Container>
     </Navbar>
