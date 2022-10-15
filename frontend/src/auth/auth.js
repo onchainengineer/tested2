@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Navigate } from 'react-router';
 
-const API_URL = "http://localhost:3000/users/"
+const API_URL = "https://athena-backend.vercel.app/users/"
 
 class Auth{
     login(email,password){
