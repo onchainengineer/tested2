@@ -18,6 +18,10 @@ const UserSchema = new Schema({
     isSeller:{
         type:Boolean,
         default:false
+    },
+    isManufacturer:{
+        type:Boolean,
+        default:false
     }
 },{
     timestamps:true

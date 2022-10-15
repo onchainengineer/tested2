@@ -22,7 +22,8 @@ passport.use('register', new localStrategy(
             // console.dir(req.body);
             const name = req.body.name;
             const isSeller = req.body.isSeller;
-            const user = await User.create({name,email,password,isSeller});
+            const isManufacturer = req.body.isManufacturer;
+            const user = await User.create({name,email,password,isSeller,isManufacturer});
             return done(null,user);
         }
         catch(err){
@@ -48,7 +49,7 @@ passport.use('login', new localStrategy({
                 console.log('Wrong password');
                 return done(null,false,{'message':'Wrong password'});
             }
-            console.log(user);
+            // console.log(user);
             return done(null,user,{'message':'Logged in successfully'});
         }
         catch(err){

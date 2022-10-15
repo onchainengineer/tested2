@@ -61,8 +61,8 @@ exports.getUser = async(req,res)=>{
         console.log(req);
         const id = req.user._id
         console.log(id);
-        var user = await User.findById(id);
-        //console.dir(user);
+        // var user = await User.findById(id);
+        const user = await User.findOne({'_id':req.user._id});
         if(!user){
             return res.status(404).json({'err':'User not found'});
         }

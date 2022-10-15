@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Navigate } from 'react-router';
 
 const API_URL = "http://localhost:3000/users/"
 
@@ -21,6 +22,9 @@ class Auth{
 
     logout(){
         localStorage.removeItem("user");
+        localStorage.removeItem('isSeller');
+        localStorage.removeItem('isManufacturer');
+        
     }
 
     register(name,email,password,isSeller){

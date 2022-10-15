@@ -2,16 +2,18 @@
 import React, { useState } from "react"
 import axios from "axios";
 import Auth from '../auth/auth'
-import {withRouter} from "react-router";
+import {useNavigate, withRouter} from "react-router";
 
 const API_URL = "http://localhost:3000";
 
 export default function (props) {
   let [authMode, setAuthMode] = useState("signin");
+  let navigate = useNavigate();
   const [email,setEmail] = useState();
   const [password,setPassword] = useState();
   const [name,setName] = useState();
   const [isSeller,setIsSeller] = useState(false);
+  const [isManufacturer,setIsManufacturer] = useState(false);
 
 
   const changeAuthMode = () => {
@@ -32,16 +34,36 @@ export default function (props) {
     e.preventDefault();
     axios.post(API_URL+'/users/login',
     {email,password})
-    .then(res=>{
+    .then(async(res)=>{
         console.log(res.data);
         localStorage.setItem('user',res.data.token);
         console.log(props.history);
+        await getUser();
         
-        props.history.push("/");
     })
     .catch(err=>{
         console.log(err);
     })
+}
+
+const getUser = ()=>{
+  axios.get(API_URL+'/users/getuser',{headers:{
+    Authorization:'Bearer '+ localStorage.getItem("user")
+}})
+.then((res)=>{
+  console.log(res.data.isSeller)
+  // if(res.data.isSeller===true){
+  //   localStorage.setItem('isSeller',true)
+  // }
+  // if(res.data.isManufacturer===true){
+  //   localStorage.setItem('isManufacturer',true)
+  // }
+  localStorage.setItem('isSeller',res.data.isSeller)
+  localStorage.setItem('isManufacturer',res.data.isManufacturer)
+  navigate("/");
+        window.location.reload();
+})
+.catch((err)=>{console.log(err)})
 }
 
   if (authMode === "signin") {
