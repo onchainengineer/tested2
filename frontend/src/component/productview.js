@@ -30,7 +30,7 @@ function ProductsPage() {
       <div style={{ width: '4rem' }}/>
       <div class="col-sm-3 shadow p-3 mb-5 bg-white rounded">
       <Card style={{ width: '16rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        
         <Card.Body>
           <Card.Title>{product.name}</Card.Title>
           <Card.Text>
