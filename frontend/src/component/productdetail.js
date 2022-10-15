@@ -26,7 +26,7 @@ function ProductDetail() {
   <div class="row">
   <div class="col-sm-3">
   {product && (<Card style={{ width: '69rem' }}>
-    <Card.Img variant="top" src="holder.js/100px180" />
+   
     <Card.Body>
       <Card.Title>{product.name}</Card.Title>
       <Card.Text>
