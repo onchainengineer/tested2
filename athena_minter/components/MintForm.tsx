@@ -13,7 +13,7 @@ import {
 import { useFormContext } from 'react-hook-form';
 import { EInputType } from '../types/types';
 import { tags } from '../config/constants';
-import Container from 'react-bootstrap/Container';
+
 
 function MintForm() {
   const {
